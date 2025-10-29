@@ -24,8 +24,11 @@ This repository is configured to automatically deploy to GitHub Pages when chang
 ### Local Development
 
 ```bash
-# Install dependencies
+# Install dependencies (recommended for development)
 npm install
+
+# Install dependencies (used in CI/production, ensures exact versions)
+npm ci
 
 # Run development server
 npm run dev
@@ -45,10 +48,22 @@ npm run typecheck
 
 ## 📁 Project Structure
 
-- `src/` - Source code
-- `public/` - Static assets
-- `.github/workflows/` - GitHub Actions workflows
-- `dist/` - Production build output (generated)
+```
+eportfolio/
+├── .github/
+│   └── workflows/       # GitHub Actions workflows
+├── public/              # Static assets (PDFs, images)
+├── src/                 # Source code
+│   ├── components/      # React components
+│   ├── App.tsx          # Main app component
+│   └── main.tsx         # Entry point
+├── dist/                # Production build output (generated)
+├── index.html           # HTML template
+├── vite.config.ts       # Vite configuration
+├── tailwind.config.js   # Tailwind CSS configuration
+├── tsconfig.json        # TypeScript configuration
+└── package.json         # Project dependencies and scripts
+```
 
 ## 🛠️ Technologies
 
